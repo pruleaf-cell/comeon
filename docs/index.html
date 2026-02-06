@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cupboard Chef</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>🍽️ Cupboard Chef</h1>
+      <p>Tell us what is in your cupboard and get quick UK-friendly recipe ideas.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel controls">
+        <h2>Find recipes</h2>
+        <label for="ingredientInput">Ingredients (comma separated)</label>
+        <input id="ingredientInput" type="text" placeholder="e.g. pasta, tomato, garlic" />
+
+        <fieldset>
+          <legend>Meal type</legend>
+          <select id="mealTypeFilter">
+            <option value="all">All meal types</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Diet</legend>
+          <select id="dietFilter">
+            <option value="all">Any diet</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Contains dairy">Contains dairy</option>
+            <option value="Contains fish">Contains fish</option>
+            <option value="Contains meat">Contains meat</option>
+          </select>
+        </fieldset>
+
+        <button id="searchBtn" type="button">Suggest recipes</button>
+        <button id="resetBtn" class="secondary" type="button">Reset</button>
+      </section>
+
+      <section class="panel results">
+        <div class="results-header">
+          <h2>Suggestions</h2>
+          <p id="resultCount">0 recipes</p>
+        </div>
+        <div id="recipeList" class="recipe-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <template id="recipeCardTemplate">
+      <article class="recipe-card">
+        <div class="recipe-meta"></div>
+        <h3></h3>
+        <p class="description"></p>
+        <h4>Ingredients</h4>
+        <ul class="ingredients"></ul>
+        <h4>Method</h4>
+        <ol class="method"></ol>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
