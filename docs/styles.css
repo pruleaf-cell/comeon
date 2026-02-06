@@ -1,0 +1,172 @@
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --ink: #24322f;
+  --muted: #60746f;
+  --brand: #2f7a5c;
+  --brand-strong: #1f5f45;
+  --border: #d7dedb;
+  --shadow: 0 6px 24px rgba(24, 45, 37, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #faf8f4, var(--bg));
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.hero {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.8rem);
+}
+
+.hero p {
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.layout {
+  width: min(1100px, 92vw);
+  margin: 0 auto 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.controls {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+}
+
+label,
+legend {
+  font-weight: 600;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  margin-top: 0.4rem;
+  margin-bottom: 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 0.7rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--brand-strong);
+}
+
+button.secondary {
+  background: #edf3f0;
+  color: var(--ink);
+  border: 1px solid var(--border);
+}
+
+button.secondary:hover {
+  background: #dfe8e4;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.results-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.recipe-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.recipe-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fcfffd;
+}
+
+.recipe-card h3 {
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.recipe-card ul,
+.recipe-card ol {
+  margin: 0 0 0.8rem;
+  padding-left: 1.15rem;
+}
+
+.recipe-meta {
+  color: var(--brand-strong);
+  font-weight: 600;
+  font-size: 0.87rem;
+}
+
+.description {
+  color: var(--muted);
+}
+
+.empty {
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  color: var(--muted);
+  background: #fafdfb;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    position: static;
+  }
+}
